@@ -14,7 +14,7 @@ def shorten_url(request):
         org_url = serializer.validated_data["org_url"]
         short_url_obj, created = ShortUrl.objects.get_or_create(org_url=org_url)
         return Response(
-            {"short_url": f"shortly/{short_url_obj.short_url}"},
+            {"short_url": f"http://127.0.0.1:8000/shortly/{short_url_obj.short_url}"},
             status=status.HTTP_201_CREATED,
         )
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

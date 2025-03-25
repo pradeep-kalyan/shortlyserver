@@ -8,7 +8,7 @@ def generate_short():
 
 
 class ShortUrl(models.Model):
-    org_url = models.CharField(max_length=256)
+    org_url = models.CharField(max_length=500)
     short_url = models.CharField(max_length=6, unique=True, default=generate_short)
     created_at = models.DateTimeField(auto_now_add=True)
 
